@@ -135,6 +135,7 @@ def format_report(rows: list[dict]) -> str:
         -> "a: CTR=5.00% CPC=0.60"
     """
     # мой код здесь
+    report_lines = []
     for row in rows:
         ctr = calc_ctr(row["clicks"], row["impressions"])
         cpc = calc_cpc(row["spend"], row["clicks"])
