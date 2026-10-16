@@ -21,6 +21,7 @@ def parse_campaign(line: str) -> dict:
         -> {"campaign_id": "ADV01-001", "impressions": 1000, "clicks": 50, "spend": 30.0}
     """
     # мой код здесь
+
     parts = line.strip().split(";")
 
     if len(parts) != 4:
@@ -46,6 +47,7 @@ def calc_ctr(clicks: int, impressions: int) -> float:
         calc_ctr(0, 0) -> 0.0
     """
     # мой код здесь
+
     if impressions <= 0:
         return 0.0
     return clicks / impressions
@@ -62,6 +64,7 @@ def calc_cpc(spend: float, clicks: int) -> float:
         calc_cpc(75.0, 0) -> 0.0
     """
     # мой код здесь
+
     if clicks <= 0:
         return 0.0
     return spend / clicks
@@ -93,6 +96,7 @@ def merge_duplicate_campaigns(records: list[dict]) -> list[dict]:
         ]
     """
     # мой код здесь
+
     merged = {}
 
     for record in records:
@@ -131,8 +135,6 @@ def format_report(rows: list[dict]) -> str:
         -> "a: CTR=5.00% CPC=0.60"
     """
     # мой код здесь
-    report_lines = []
-
     for row in rows:
         ctr = calc_ctr(row["clicks"], row["impressions"])
         cpc = calc_cpc(row["spend"], row["clicks"])
