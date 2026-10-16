@@ -24,7 +24,7 @@ def decode_caesar_cipher(text: str, shift: int) -> str:
 
 if __name__ == "__main__":
     # Готовый код запуска - менять не нужно.
-    with open("data\task1_encoded.txt", encoding="utf-8") as f:
+    with open("data/task1_encoded.txt", encoding="utf-8") as f:
         encoded_text = f.read().strip()
 
     shift = 7
